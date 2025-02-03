@@ -1,0 +1,67 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package andrehomework;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author aloli
+ */
+public class AndreHomework {
+
+   
+    public static void main(String[] args) {
+        
+       //DECLARING VARIABLES AND CREATING SCANNER MYKB
+       
+       Scanner myKB = new Scanner(System.in); 
+       String userName;
+       String userUpperCase;
+       String userNameReplace;
+       String userNameDash ;
+       String userInputAllManipulatitionTogether;
+        
+       //CREATING A LOOP TO MAKE SURE THAT IS JUST LETTERS THE INPUT
+    do{
+        
+        //ASKING AND GETTING OUTPUT FROM THE USER
+        System.out.println("What is your name?");
+        userName = myKB.nextLine();
+        
+        
+      //CONDITIONAL TO MAKE SURE THAT THE USER UNDERSTAND IN CASE HE TYPES A NUMBER
+        if(!userName.matches("[a-zA-Z ]+")){
+            System.out.println("Try again, no Numbers allowed.");
+        }
+        
+    //CONDITIONAL FOR THE LOOP 
+    }while(!userName.matches("[a-zA-Z ]+"));
+    
+    
+        //PUTTING ALL IN UPPER CASE 
+        userUpperCase = userName.toUpperCase();
+        
+        //ADDING A DASH BETWEEN EACH LETTER
+        userNameDash = String.join("-", userName.split(""));
+        
+
+        //REPLACING THE VOWELS AND SPACE FOR NUMBERS
+        userNameReplace = userName.toUpperCase().replace("A", "4").replace("E", "3").replace("I", "1")
+                .replace("O", "0").replace(" ", "-");
+        
+        
+        
+    
+        //OUTPUT OF EACH MANIPULATION
+        System.out.println("\nThe user Input: "+userName);
+        System.out.println("\nAll the letter in UpperCase: "+ userUpperCase);
+        System.out.println("\nAdding Dash between the letter: "+userNameDash); 
+        System.out.println("\nReplacing some letter: "+userNameReplace);
+        
+    
+    }
+    
+}
